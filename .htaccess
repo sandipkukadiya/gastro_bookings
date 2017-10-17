@@ -1,0 +1,17 @@
+Header set Access-Control-Allow-Origin "*"
+	Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+	Header always set Access-Control-Allow-Headers "AUTHORIZATION, CONTENT-TYPE"
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.wwww1\.dev [NC]
+RewriteCond %{REQUEST_URI}  !^/gastrobooking.ui/src/
+RewriteRule ^(.*)$ /gastrobooking.ui/src/$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} ^www1\.dev [NC]
+RewriteCond %{REQUEST_URI}  !^/gastrobooking.ui/src/
+RewriteRule ^(.*)$ /gastrobooking.ui/src/$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} ^api\.www1\.dev [NC]
+RewriteCond %{REQUEST_URI}  !^/gastrobooking.api/public/
+RewriteRule ^(.*)$ /gastrobooking.api/public/$1 [L,QSA]

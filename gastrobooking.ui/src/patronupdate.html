@@ -1,0 +1,20 @@
+<html>
+<head>
+
+</head>
+<body>
+<script src="assets/js2/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'http://api.gastro-booking.cz/api/patron/update',
+//            url: 'http://gastro-booking/gastrobooking.api/public/api/patron/update',
+            methods: 'GET',
+            success: function(reponse) {
+                console.log(reponse);
+            }
+        });
+    });
+</script>
+</body>
+</html>
